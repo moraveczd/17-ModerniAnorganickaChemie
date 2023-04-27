@@ -6,20 +6,21 @@
 \usepackage{adjustbox}
 \usepackage{mhchem}
 \usepackage{chemfig}
-\usepackage{ucs}
-\usepackage[utf8]{inputenc}
 \usepackage{caption}
 
-\PrerenderUnicode{ěščřžýáíéĚŠČŘŽÝÁÍÉďťňĎŤŇůúÚóÓ}
+%dělení slov
+\usepackage{ragged2e}
+\let\raggedright=\RaggedRight
+%konec dělení slov
 
 \addtobeamertemplate{frametitle}{
-   \let\insertframetitle\insertsectionhead}{}
+	\let\insertframetitle\insertsectionhead}{}
 \addtobeamertemplate{frametitle}{
-   \let\insertframesubtitle\insertsubsectionhead}{}
+	\let\insertframesubtitle\insertsubsectionhead}{}
 
 \makeatletter
-  \CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup\beamer@inlineframetitle{}}
-  \renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+\CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+\renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
 \makeatother
 \setbeamercolor{section in toc}{fg=red}
 \setbeamertemplate{section in toc shaded}[default][100]
@@ -33,11 +34,10 @@
 \def\uv#1{„#1“}
 
 \mode<presentation>{\usetheme{default}}
- \usecolortheme{Whale}
+\usecolortheme{crane}
 
 \setbeamertemplate{footline}[frame number]
 
-\begin{document}
 \title[Crisis]
 {C2062 -- Anorganická chemie II}
 
@@ -45,6 +45,7 @@
 \author{Zdeněk Moravec, hugo@chemi.muni.cz \\ \adjincludegraphics[height=60mm]{img/IUPAC_PSP.jpg}}
 \date{}
 
+\begin{document}
 \begin{frame}
 	\titlepage
 \end{frame}
@@ -55,12 +56,15 @@
 	\frametitle{}
 	\vfill
 	\begin{itemize}
-	\item Materiálová chemie se zabývá syntézou a optimalizací syntézy materiálů, jejich vlastnostmi a charakterizací.
+	\item Materiálová chemie se zabývá:
+	\begin{itemize}
+		\item syntézou a optimalizací syntézy materiálů
+		\item vlastnostmi materiálů
+		\item studiem reakčních mechanismů
+		\item charakterizací produktů
+	\end{itemize}
 	\item Mimo samotné syntézy sem patří i výpočtová chemie.
 	\end{itemize}
-	\begin{center}
-	\adjincludegraphics[height=4.5cm]{img/Materials_science_tetrahedron.png}
-	\end{center}
 	\vfill
 }
 
@@ -75,45 +79,55 @@
 		\item[3D] Bulkové materiály.
 	\end{itemize}
 	\begin{figure}
-		\adjincludegraphics[height=0.55\textheight]{img/Eight_Allotropes_of_Carbon.png}
+		\adjincludegraphics[height=0.5\textheight]{img/Eight_Allotropes_of_Carbon.png}
+		\caption*{Allotropní modifikace uhlíku.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Eight_Allotropes_of_Carbon.svg}{Andel/Commons}}}
 	\end{figure}
 	\vfill
 }
 
 \frame{
 	\frametitle{}
-	\begin{itemize}
-		\item Počátek studia 2D materiálů se datuje k roku 2004, kdy byl poprvé připraven grafen mechanickou exfoliací grafitu.\footnote[frame]{\href{https://doi.org/10.1021/acs.chemrev.7b00633}{Exploring Two-Dimensional Materials toward the Next-Generation Circuits: From Monomer Design to Assembly Control}}
-		\item 2D materiály jsou velmi důležité pro moderní elektroniku:
-		\begin{itemize}
-			\item Nanoelektronika
-			\item Optoelektronika
-			\item Flexibilní elektronické obvody
-		\end{itemize}
-		\item V současnosti známe více než 50 druhů 2D materiálů, převážně jde o oxidy, chalkogenidy a dichalkogenidy (TMD -- Transition Metals Dichalcogenides):
-		\begin{itemize}
-			\item CuO, FeO, SnO, ZnO, \ce{MoS2}, \ce{WS2}, \ce{MoSe2}, \ce{WSe2}
-		\end{itemize}
-	\end{itemize}
+	\begin{columns}
+		\begin{column}{.75\textwidth}
+			\begin{itemize}
+				\item Počátek studia 2D materiálů se datuje k roku 2004, kdy byl poprvé připraven grafen mechanickou exfoliací grafitu.\footnote[frame]{\href{https://doi.org/10.1021/acs.chemrev.7b00633}{Exploring Two-Dimensional Materials toward the Next-Generation Circuits: From Monomer Design to Assembly Control}}
+				\item 2D materiály jsou velmi důležité pro moderní elektroniku:
+				\begin{itemize}
+					\item Nanoelektronika
+					\item Optoelektronika
+					\item Flexibilní elektronické obvody
+				\end{itemize}
+				\item V současnosti známe více než 50 druhů 2D materiálů, převážně jde o oxidy, chalkogenidy a dichalkogenidy (TMD -- Transition Metals Dichalcogenides):
+				\begin{itemize}
+					\item CuO, FeO, SnO, ZnO, \ce{MoS2}, \ce{WS2}, \ce{MoSe2}, \ce{WSe2}
+				\end{itemize}
+			\end{itemize}
+		\end{column}
+		\begin{column}{.3\textwidth}
+			\begin{figure}
+				\adjincludegraphics[width=\textwidth]{img/Flexed_plastic_display.jpg}
+				\caption*{Flexibilní displej.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Flexed_plastic_display.jpg}{Plastic Logic/Commons}}}
+			\end{figure}
+		\end{column}
+	\end{columns}
+}
+
+\section{Uhlík}
+\subsection{Allotropické modifikace uhlíku}
+\frame{
+	\frametitle{}
+	\vfill
 	\begin{figure}
-		\adjincludegraphics[width=0.32\textwidth]{img/Flexed_plastic_display.jpg}
-	\end{figure}
-}
-
-\subsection{Uhlík}
-\frame{
-	\frametitle{}
-	\vfill
-	\begin{figure}
-		\adjincludegraphics[height=0.85\textheight]{img/Eight_Allotropes_of_Carbon.png}
+		\adjincludegraphics[height=0.7\textheight]{img/Eight_Allotropes_of_Carbon.png}
+		\caption*{Allotropické modifikace uhlíku.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Eight_Allotropes_of_Carbon.png}{mstroeck/Commons}}}
 	\end{figure}
 	\vfill
 }
 
+\subsection{Oxid grafitu}
 \frame{
 	\frametitle{}
 	\vfill
-	\textbf{Oxid grafitu}
 	\begin{itemize}
 		\item Někdy se označuje jako kyselina grafitová. Skládá se z uhlíku, kyslíku a vodíku, jejich poměr je proměnný.
 		\item Poprvé byl připraven roku 1859 reakcí grafitu s chlorečnanem draselným a dýmavou kyselinou dusičnou.\footnote[frame]{\href{https://doi.org/10.1098/rstl.1859.0013}{On the atomic weight of graphite}}
@@ -124,24 +138,35 @@
 	\vfill
 }
 
+\subsection{Grafen}
 \frame{
 	\frametitle{}
-	\textbf{Grafen}
+	\vfill
+	\begin{itemize}
+		\item Monovrstva tvořená sp$^2$ uhlíky.
+		\item Poprvé byl připraven v roce 2004 exfoliací grafitu pomocí lepící pásky.\footnote[frame]{\href{https://www.idnes.cz/zpravy/zahranicni/nobelovu-cenu-za-fyziku-dostali-vedci-za-vyzkum-supertenkeho-uhliku.A101005_120031_zahranicni_aha}{Nobelovu cenu za fyziku dostali vědci za výzkum supertenkého uhlíku}} V roce 2010 byla za tento objev udělena Nobelova cena za fyziku.\footnote[frame]{\href{https://www.nobelprize.org/prizes/physics/2010/press-release/}{The Nobel Prize in Physics 2010}}
+		\item V roce 2008 byl grafen nejdražším materiálem světa, 1~cm$^2$ stál zhruba \$100~000~000.
+		\item V roce 2009 klesla cena na \$100/cm$^2$. Příčinou poklesu ceny byla optimalizace exfoliačních metod pro velkoobjemovou syntézu a k vývoji CVD metody výroby grafenu.
+		\item Grafen je 200$\times$ pevnější než ocel, zároveň je ale i tvrdší a lehčí.
+		\item Pohyblivost elektronů v grafenu je řádově vyšší než v křemíku, proto by mohl být výhodný pro konstrukci čipů.
+		\item V závislosti na struktuře může vystupovat jako izolant, polovodič, vodič i supravodič.
+	\end{itemize}
+	\vfill
+}
+
+\frame{
+	\frametitle{}
 	\begin{columns}
-		\begin{column}{0.6\textwidth}
-			\vfill
-			\begin{itemize}
-				\item Monovrstva tvořená sp$^2$ uhlíky.
-				\item Poprvé byl připraven v roce 2004 exfoliací grafitu pomocí lepící pásky.\footnote[frame]{\href{https://www.idnes.cz/zpravy/zahranicni/nobelovu-cenu-za-fyziku-dostali-vedci-za-vyzkum-supertenkeho-uhliku.A101005_120031_zahranicni_aha}{Nobelovu cenu za fyziku dostali vědci za výzkum supertenkého uhlíku}} V roce 2010 byla za tento objev udělena Nobelova cena za fyziku.\footnote[frame]{\href{https://www.nobelprize.org/prizes/physics/2010/press-release/}{The Nobel Prize in Physics 2010}}
-				\item V roce 2008 byl grafen nejdražším materiálem světa, 1~cm$^2$ stál zhruba \$100~000~000.
-				\item V roce 2009 klesla cena na \$100/cm$^2$. Příčinou poklesu ceny byla optimalizace exfoliačních metod pro velkoobjemovou syntézu a k vývoji CVD metody výroby grafenu.
-			\end{itemize}
-			\vfill
-		\end{column}
-		\begin{column}{0.4\textwidth}
+		\begin{column}{0.5\textwidth}
 			\begin{figure}
-				\adjincludegraphics[width=0.9\textwidth]{img/Graphen.jpg}
-				\adjincludegraphics[width=0.9\textwidth]{img/Graphene.jpg}
+				\adjincludegraphics[height=0.45\textheight]{img/Graphen.jpg}
+				\caption*{Grafenová vrstva.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Graphen.jpg}{AlexanderAlUS/Commons}}}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\adjincludegraphics[height=0.45\textheight]{img/Graphene.jpg}
+				\caption*{Grafen připravený CVD na měděném substrátu.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Graphene.jpg}{Tavo Romann/Commons}}}
 			\end{figure}
 		\end{column}
 	\end{columns}
@@ -156,7 +181,7 @@
 		\item Vykazuje výjimečné mechanické vlastnosti.
 		\item Grafen se vyrábí exfoliací grafitu, tato metoda poskytuje kvalitní grafen, ale v malém množství.
 		\item Větší množství lze připravit exfoliací pomocí ultrazvuku ve vodném roztoku se surfaktantem.
-		\item Kvalitní vrstvy lze připravit pomocí metody \hyperlink{CVD}{\underline{CVD}} (Chemical Vapor Deposition).
+		\item Kvalitní vrstvy lze připravit pomocí metody CVD (Chemical Vapor Deposition).
 	\end{itemize}
 	\begin{figure}
 		\adjincludegraphics[width=0.8\textwidth]{img/graphene-CVD.png}
@@ -164,10 +189,10 @@
 	\vfill
 }
 
+\subsection{Grafen jako supravodič}
 \frame{
 	\frametitle{}
 	\vfill
-	\textbf{Supravodivý grafen}
 	\begin{itemize}
 		\item Pokud na sebe umístíme dvě vrstvy grafenu a pootočíme je o 1,1$^\circ$ získáme supravodič s kritickou teplotou 1,7~K.\footnote[frame]{\href{https://www.nature.com/articles/nature26160}{Unconventional superconductivity in magic-angle graphene superlattices}}
 		\item Podobně se chová i trojvrstva grafenu.\footnote[frame]{\href{https://www.sciencemag.org/news/2019/07/trilayer-graphene-shows-signs-superconductivity}{Trilayer graphene shows signs of superconductivity}}
@@ -177,10 +202,10 @@
 	\vfill
 }
 
+\subsection{Deriváty grafenu}
 \frame{
 	\frametitle{}
 	\vfill
-	\textbf{Deriváty grafenu}
 	\begin{itemize}
 		\item Chemie grafenu je poměrně mladá, stále existuje spousta neprozkoumaných oblastí.
 		\item Derivatizací grafenu můžeme docílit:
@@ -200,30 +225,32 @@
 	\frametitle{}
 	\vfill
 	\begin{figure}
-		\adjincludegraphics[height=.8\textheight]{img/Graphane.png}
+		\adjincludegraphics[height=.7\textheight]{img/Graphane.png}
+		\caption*{Grafan.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Graphane.png}{Edgar181/Commons}}}
 	\end{figure}
 	\vfill
 }
 
+\subsection{Grafenoxid}
 \frame{
 	\frametitle{}
-	\vfill
-	\textbf{Grafenoxid}
 	\begin{columns}
-		\begin{column}{0.5\textwidth}
+		\begin{column}{.6\textwidth}
+			\vfill
 			\begin{itemize}
 				\item Oxidovaná forma grafenu. Kromě uhlíku obsahuje i kyslík a vodík -- hydroxylové, karbonylové, karboxylové a epoxidové skupiny.
-				\item Je hydrofilní, dobře se váže s~oxidickými materiály.
+				\item Je hydrofilní, dobře se váže s oxidickými materiály.
 				\item Struktura a vlastnosti jsou závislé na metodě přípravy.
-				\item Hummerova metoda -- oxidace grafitu pomocí směsi \mbox{\ce{H2SO4 + KMnO4}} a následná exfoliace ultrazvukem.
+				\item Hummerova metoda -- oxidace grafitu pomocí směsi \ce{H2SO4 + KMnO4}.
+				\item Vzniklý oxid grafitu je exfoliován, nejčastěji ultrazvukem.
 				\item Oxidaci lze provést i pomocí oxidu chromového (\ce{CrO3}).
 			\end{itemize}
 			\vfill
 		\end{column}
-		\begin{column}{0.5\textwidth}
+		\begin{column}{.4\textwidth}
 			\begin{figure}
-				\adjincludegraphics[width=0.9\textwidth]{img/Graphite_oxide.png}
-				\adjincludegraphics[width=0.5\textwidth]{img/Graphenoxid_Freezedried_Suspension.jpg}
+				\adjincludegraphics[width=\textwidth]{img/Graphene_oxide_in_liquid_water.png}
+				\caption*{Grafenoxid ve vodě.\footnote[frame]{Zdroj: \href{https://en.wikipedia.org/wiki/File:Graphene_oxide_in_liquid_water.png}{Marie-Laure Bocquet/Commons}}}
 			\end{figure}
 		\end{column}
 	\end{columns}
@@ -231,7 +258,25 @@
 
 \frame{
 	\frametitle{}
-	\textbf{Redukovaný grafenoxid}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\adjincludegraphics[height=0.55\textheight]{img/Graphite_oxide.png}
+				\caption*{Možná struktura oxidu grafitu.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Graphite_oxide.svg}{Iridos/Commons}}}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\adjincludegraphics[height=0.55\textheight]{img/Graphenoxid_Freezedried_Suspension.jpg}
+				\caption*{Grafenoxid a jeho suspenze ve vodě.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Graphenoxid_Freezedried_Suspension.jpg}{Krischkrisch/Commons}}}
+			\end{figure}
+		\end{column}
+	\end{columns}
+}
+
+\subsection{Redukovaný grafenoxid}
+\frame{
+	\frametitle{}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\vfill
@@ -239,7 +284,7 @@
 				\item Získává se redukcí grafenoxidu.\footnote[frame]{\href{https://www.graphene-info.com/reduced-graphene-oxide-introduction}{Reduced graphene oxide: an introduction}}
 				\item Část kyslíkových skupin je zachována i po redukci, proto jej nelze označit jako grafen.
 				\item Redukcí dochází i ke vzniku poruch v grafenové síti.
-				\item Částečně dochází k obnovení aromatického charakteru a tím i~vodivosti.
+				\item Částečně dochází k obnovení aromatického charakteru a tím i vodivosti.
 				\item Jako redukovadlo lze využít kyselinu askorbovou nebo citronovou.
 			\end{itemize}
 			\vfill
@@ -250,7 +295,21 @@
 	\end{columns}
 }
 
-\subsection{Křemík}
+\subsection{Grafulleren}
+\frame{
+	\frametitle{}
+	\vfill
+	\begin{itemize}
+		\item Na začátku roku 2023 byla publikována příprava analogu grafenu, který je označován jako \textit{grafulleren}.\footnote[frame]{\href{https://doi.org/10.1038/s41586-022-05401-w}{A few-layer covalent network of fullerenes}}
+		\item Jde o 2D strukturu, místo uhlíku obsahuje molekuly fullerenu \ce{C60}.
+		\item Byl připraven zahříváním směsi \ce{C60} a hořčíku v zatavené ampuli.\footnote[frame]{\href{http://z-moravec.net/graphulleren-novy-alotrop-uhliku/}{Grafulleren – nový alotrop uhlíku}}
+		\item Získané krystaly měly složení \ce{(Mg4C60)_∞}.
+		\item Po odstranění hořečnatých iontů pomocí kyseliny chlorovodíkové nebo octové byl získán nový 2D allotrop uhlíku.
+	\end{itemize}
+	\vfill
+}
+
+\section{Křemík}
 \frame{
 	\frametitle{}
 	\vfill
@@ -262,16 +321,22 @@
 	\end{itemize}
 	\begin{columns}
 		\begin{column}{.4\textwidth}
-			\adjincludegraphics[height=.5\textheight]{img/Silicene-Ag_STM5_crop.jpg}
+			\begin{figure}
+				\adjincludegraphics[height=.3\textheight]{img/Silicene-Ag_STM5_crop.jpg}
+				\caption*{STM snímek silicenu.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Silicene-Ag_STM5_crop.jpg}{Junki Sone et al./Commons}}}
+			\end{figure}
 		\end{column}
 		\begin{column}{.4\textwidth}
-			\adjincludegraphics[height=.5\textheight]{img/Silicene_buckling.png}
+			\begin{figure}
+				\adjincludegraphics[height=.3\textheight]{img/Silicene_buckling.png}
+				\caption*{Základní jednotka silicenu.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Silicene_buckling.svg}{Jozef Sivek/Commons}}}
+			\end{figure}
 		\end{column}
 	\end{columns}
 	\vfill
 }
 
-\subsection{Bor}
+\section{Bor}
 \frame{
 	\frametitle{}
 	\vfill
@@ -282,11 +347,12 @@
 	\end{itemize}
 	\begin{figure}
 		\adjincludegraphics[width=.8\textwidth]{img/Crystal_structures_of_borophenes.png}
+		\caption*{Krystalová struktura borofenu.\footnote[frame]{Zdroj: \href{https://doi.org/10.1080/21663831.2017.1298539}{Stability and strength of atomically thin borophene from first principles calculations}}}
 	\end{figure}
 	\vfill
 }
 
-\subsection{Fosfor}
+\section{Fosfor}
 \frame{
 	\frametitle{}
 	\vfill
@@ -301,14 +367,15 @@
 		\end{column}
 		\begin{column}{.5\textwidth}
 			\begin{figure}
-				\adjincludegraphics[height=.8\textheight]{img/Phosphorene_structure.png}
+				\adjincludegraphics[height=.65\textheight]{img/Phosphorene_structure.png}
+				\caption*{Struktura fosforenu.\footnote[frame]{Zdroj: \href{https://doi.org/10.1088/1367-2630/16/11/115004}{Topological origin of quasi-flat edge band in phosphorene}}}
 			\end{figure}
 		\end{column}
 	\end{columns}
 	\vfill
 }
 
-\subsection{Molybden}
+\section{Molybden}
 \frame{
 	\frametitle{}
 	\vfill
@@ -318,7 +385,8 @@
 		\item V bulkovém stavu je diamagnetický a jde o nepřímý polovodič.\footnote[frame]{Přechod mezi pásy je spojen se změnou hybnosti, proto jde o nezářivé přechody.}
 	\end{itemize}
 	\begin{figure}
-		\adjincludegraphics[width=.85\textwidth]{img/Molybdenite-3D-balls.png}
+		\adjincludegraphics[width=.75\textwidth]{img/Molybdenite-3D-balls.png}
+		\caption*{Struktura \ce{MoS2}.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Molybdenite-3D-balls.png}{Ben Mills/Commons}}}
 	\end{figure}
 	\vfill
 }
@@ -337,7 +405,21 @@
 	\vfill
 }
 
-\subsection{Využití 2D materiálů}
+\section{Železo}
+\frame{
+	\frametitle{}
+	\vfill
+	\begin{itemize}
+		\item Monovrstvy FeO byly poprvé připraveny už v roce 1988 epitaxním růstem na monokrystalu platiny(111).\footnote[frame]{\href{https://doi.org/10.1016/0039-6028(88)90602-4}{Structure, composition and chemisorption studies of thin ordered iron oxide films on platinum (111)}}
+		\item Místo platiny lze jako substrát využít palladium nebo zlato.
+		\item Zdrojem železa byl tenký železný drát namotaný na wolframovém vlákně, které bylo odporově zahříváno.
+		\item Oxidace monovrstvy železa pak probíhala pomocí kyslíku při teplotě 600~$^\circ$C.
+		\item Tyto filmy mají využití v elektronice a katalýze, např. pro hydrogenaci \ce{CO2} nebo oxidaci CO.\footnote[frame]{\href{https://doi.org/10.1021/acs.jpcc.1c08238}{Two-Dimensional Iron Oxide on Au(111): Growth Mechanism and Interfacial Properties}}
+	\end{itemize}
+	\vfill
+}
+
+\section{Využití 2D materiálů}
 \frame{
 	\frametitle{}
 	\vfill
@@ -383,10 +465,28 @@
 		\item Velkým problém je masová výroba 2D materiálů, problematická je jak rychlost produkce a cena, tak reprodukovatelnost vlastností.
 		\item Nejproblematičtější je výroba krystalických 2D monovrstev o vysoké kvalitě.\footnote[frame]{\href{https://pubs.acs.org/doi/pdf/10.1021/acsnano.5b05040}{Ultrathin Two-Dimensional Nanomaterials}}
 	\end{itemize}
+	\vfill
+}
 
-	\begin{figure}
-		\adjincludegraphics[height=.45\textheight]{img/Atomic_force_microscope_block_diagram.png}
-	\end{figure}
+\subsection{Superlubrikanty}
+\frame{
+	\frametitle{}
+	\vfill
+	\begin{itemize}
+		\item Zajímavé vlastnosti mají i kombinace 2D materiálů, např. \ce{{MoS$_2$}/{grafit}} nebo \ce{{MoS$_2$}/h-BN}.\footnote[frame]{h-BN - hexagonální BN}
+		\item Tyto materiály mají velmi rozdílné mřížkové konstanty a díky tomu vykazují velmi nízký součinitel tření. \footnote[frame]{\href{https://fel.cvut.cz/cz/aktuality/2022/superlubrikant}{Tisíc tun jednou rukou. Časopis Nature Materials publikoval práci o „superlubrikantu“ objeveném na FEL ČVUT v Praze}}
+		\item Měřením bylo zjištěno, že činitel tření má hodnotu nižší než $10^{-6}$, což je nejnižší známá hodnota.\footnote[frame]{\href{https://doi.org/10.1038/s41563-021-01058-4}{UItra-low friction and edge-pinning effect in large-lattice-mismatch van der Waals heterostructures}}
+		\item Tyto materiály by mohly být velmi dobře využitelné např. v robotice při realizaci lineárního posuvu.\footnote[frame]{\href{https://www.osel.cz/12159-2d-materialy-jsou-maziva-budoucnosti.html}{2D materiály jsou maziva budoucnosti}}
+	\end{itemize}
+
+	\begin{center}
+		\begin{tabular}{|l|r@{,}l|r@{,}l|}
+			\hline
+			\textbf{Materiál} & \multicolumn{2}{c|}{\textbf{Statický činitel}} & \multicolumn{2}{c|}{\textbf{Dynamický činitel}} \\\hline
+			Dřevo na dřevě & 0 & 65 & 0 & 30 \\\hline
+			Pneumatika na ledě & 0 & 15 & \multicolumn{2}{l|}{--} \\\hline
+		\end{tabular}
+	\end{center}
 	\vfill
 }
 
