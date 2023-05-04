@@ -1188,9 +1188,10 @@
 \frame{
 	\frametitle{}
 	\vfill
-	\begin{center}
-		\includegraphics[keepaspectratio,width=7cm]{img/NMR-levels.png}
-	\end{center}
+	\begin{figure}
+		\includegraphics[height=.65\textheight]{img/NMR-levels.png}
+		\caption*{Rozdělení spinů na hladinách v závislosti na síle magnetického pole}
+	\end{figure}
 	\vfill
 }
 
@@ -1205,43 +1206,13 @@
 		\item Délka pulsů se pohybuje v řádu $\mu$s.
 		\item Čím je puls delší, tím je větší i sklápěcí úhel.
 	\end{itemize}
-	\begin{center}
-		\includegraphics[keepaspectratio,width=5cm]{img/NMR-pulse.png}
-	\end{center}
-	\vfill
-}
-
-\subsubsection{Konstrukce NMR spektrometru}
-\frame{
-	\frametitle{}
-	\vfill
-	\includegraphics[keepaspectratio,width=10cm]{img/NMR-blockScheme.png}
+	\begin{figure}
+		\includegraphics[width=.5\textwidth]{img/pulse/pulse-width.png}
+	\end{figure}
 	\vfill
 }
 
 \subsubsection{NMR magnety}
-\frame{
-	\frametitle{}
-	\vfill
-	\begin{itemize}
-		\item Permanentní - do 100 MHz
-	\end{itemize}
-	\includegraphics[keepaspectratio,width=10cm]{img/NMR-Magritek.png}
-	\vfill
-}
-
-\frame{
-	\frametitle{}
-	\vfill
-	\begin{itemize}
-		\item Cryogen-free - 100-300 MHz - levný provoz
-	\end{itemize}
-	\begin{center}
-		\includegraphics[keepaspectratio,width=5cm]{img/200mhz cryogenfree.jpg}
-	\end{center}
-	\vfill
-}
-
 \frame{
 	\frametitle{}
 	\vfill
@@ -1294,32 +1265,6 @@
 			\item Nanosondy
 		\end{itemize}
 	\end{itemize}
-	\begin{textblock*}{4cm}(7cm,5cm)
-		\includegraphics[keepaspectratio,width=4cm]{img/NMR-probe-scheme.png}
-	\end{textblock*}
-	\vfill
-}
-
-\frame{
-	\frametitle{}
-	\vfill
-	\begin{itemize}
-		\item Sondy se dále dělí podle počtu cívek. Citlivost cívek klesá se vzdálenosti od vzorku.
-		\begin{itemize}
-			\item Dvoukanálové - dvě cívky
-			\item Tříkanálové (triple resonance)
-		\end{itemize}
-		\item BB sondy mají vnitřní cívku určenou pro měření jader X a vnější pro měření $^1$H nebo $^1H$ decoupling. \emph{Inverzní sondy} mají uspořádání opačné a jsou vhodné pro snímání jader $^1$H jader, např. v 2D experimentech -- $^1$H--$^{13}$C HSQC.
-		\item Sondy také dělíme sondy podle velikosti NMR kyvety, pro které jsou konstruovány, nejčastěji 5 a 10~mm.
-	\end{itemize}
-	\begin{columns}
-		\begin{column}{.5\textwidth}
-			\adjincludegraphics[width=.8\textwidth]{img/RepairMain5.jpg}
-		\end{column}
-		\begin{column}{.5\textwidth}
-			\adjincludegraphics[width=.8\textwidth]{img/bb_vs_ibb.jpg}
-		\end{column}
-	\end{columns}
 	\vfill
 }
 
@@ -1350,6 +1295,16 @@
 		\item Chemický posun je bezrozměrný, jelikož se jedná o velmi malé hodnoty, udává se v ppm.
 		\item Chemický posun je, na rozdíl od rezonanční frekvence, nezávislý na hodnotě vnějšího magnetického pole.
 	\end{itemize}
+	\vfill
+}
+
+\frame{
+	\frametitle{}
+	\vfill
+	\begin{figure}
+		\includegraphics[height=.75\textheight]{img/Ethylbenzen-1H.pdf}
+		\caption*{$^1$H NMR spektrum ethylbenzenu změření při 60, 300 a 500 MHz}
+	\end{figure}
 	\vfill
 }
 
@@ -1424,20 +1379,13 @@
 \subsubsection{Decoupling (dekaplink)}
 \frame{
 	\frametitle{}
-	\begin{columns}
-		\begin{column}{0.75\textwidth}
-			\begin{itemize}
-				\item Štěpením signálů spektra je důležitou informací pro strukturní analýzu, zároveň ale zhoršuje poměr signál/šum.
-				\item Pro potlačení štěpení se používá tzv. decoupling, kdy kontinuálně ozařujeme dekaplovaná jádra. Tím dojde k potlačení štěpení.
-				\item Ztratíme ale informaci o kvantitativním složení vzorku, protože intenzita signálu v dekaplovaném spektru není úměrná koncentraci.
-				\item Gated decoupling – neozařujeme během akvizice, nedojde k potlačení NOE.
-				\item Inverse-gated decoupling – ozařujeme pouze během akvizice, vhodné pro jádra se záporným gyromagnetickým poměrem – $^{15}$N, $^{29}$Si.
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.3\textwidth}
-			\includegraphics[keepaspectratio,width=3.5cm]{img/decoupling.jpg}
-		\end{column}
-	\end{columns}
+	\begin{itemize}
+		\item Štěpením signálů spektra je důležitou informací pro strukturní analýzu, zároveň ale zhoršuje poměr signál/šum.
+		\item Pro potlačení štěpení se používá tzv. decoupling, kdy kontinuálně ozařujeme dekaplovaná jádra. Tím dojde k potlačení štěpení.
+		\item Ztratíme ale informaci o kvantitativním složení vzorku, protože intenzita signálu v dekaplovaném spektru není úměrná koncentraci.
+		\item Gated decoupling – neozařujeme během akvizice, nedojde k potlačení NOE.
+		\item Inverse-gated decoupling – ozařujeme pouze během akvizice, vhodné pro jádra se záporným gyromagnetickým poměrem – $^{15}$N, $^{29}$Si.
+	\end{itemize}
 }
 
 \subsubsection{2D NMR}
@@ -1450,9 +1398,10 @@
 		\item Lepší cestou je přechod na NMR experimenty ve dvou a více dimenzích.
 		\item V dnešní době se rutinně využívá 2D a 3D NMR.
 	\end{itemize}
-	\begin{center}
-		\includegraphics[keepaspectratio,height=5cm]{img/NMR-2D-3D.png}
-	\end{center}
+	\begin{figure}
+		\includegraphics[height=.53\textheight]{img/Ethylbenzene-1H-COSY.png}
+		\caption*{$^1$H-$^1$H COSY NMR}
+	\end{figure}
 	\vfill
 }
 
@@ -1487,63 +1436,20 @@
 		\item Rotace při rychlostech 0-130 kHz.
 		\item Pro měření málo citlivých jader se využívá cross-polarizace.
 	\end{itemize}
-	\begin{center}
-		\includegraphics[keepaspectratio,height=4cm]{img/NMR-MAS-angle.png}
-		\includegraphics[keepaspectratio,height=4cm]{img/NMR-MAS-rotors.jpg}
-	\end{center}
+	\begin{figure}
+		\includegraphics[height=.45\textheight]{img/NMR-MAS-angle.png}
+		\caption*{Magický úhel.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:MagicAngleSpinning.svg}{Dtrx/Commons}}}
+	\end{figure}
 	\vfill
 }
 
 \frame{
 	\frametitle{}
 	\vfill
-	\begin{itemize}
-		\item Rychlost a stabilita rotace ovlivňují pološířku píků.\footnote[frame]{\href{http://u-of-o-nmr-facility.blogspot.com/2007/11/magic-angle-spinning.html}{Magic Angle Spinning}}
-		\item Rotace způsobuje vznik \textit{rotačních píků}.
-	\end{itemize}
-	\begin{center}
-		\includegraphics[height=.6\textheight]{img/MAS.jpg}
-	\end{center}
-	\vfill
-}
-
-\subsubsection{NMR ve slabém magnetickém poli}
-\frame{
-	\frametitle{}
-	\vfill
-	\begin{itemize}
-		\item Earth's-Field NMR.
-		\begin{itemize}
-			\item Využívá magnetické pole Země.
-			\item Lze měřit velké vzorky.
-			\item Pro zlepšení S/N se využívá pre-polarizace v elektromagnetu.
-		\end{itemize}
-		\item Low-Field NMR.
-		\item Systémy využívající permanentní magnety nebo elektromagnety.
-	\end{itemize}
-	\begin{center}
-		\includegraphics[keepaspectratio,width=0.2\textwidth]{img/Geodynamo_Between_Reversals.png}
-		\includegraphics[keepaspectratio,width=0.5\textwidth]{img/HighFieldTAGComparison_cropped.png}
-	\end{center}
-	\vfill
-}
-
-\subsubsection{Využití NMR}
-\frame{
-	\frametitle{}
-	\vfill
-	\begin{itemize}
-		\item Rutinní kvalitativní a kvantativní chemická analýza.
-		\item Strukturní analýza.
-		\item Strukturní analýza biomolekul.
-		\item Studium degradačních procesů a stupně degradace, např. barviv, polymerů, atd.
-		\item Studium stupně hydratace v nástěnných malbách pomocí bezkontaktní sondy.
-	\end{itemize}
-	\begin{center}
-		\includegraphics[keepaspectratio,width=0.3\textwidth]{img/H-NMR_1,2-dichlorobenzene.png}
-		\includegraphics[keepaspectratio,width=0.3\textwidth]{img/HSQC.png}
-		\includegraphics[keepaspectratio,width=0.3\textwidth]{img/Portable-NMR.jpg}
-	\end{center}
+	\begin{figure}
+		\includegraphics[height=.68\textheight]{img/NMR-MAS-rotors.jpg}
+		\caption*{Rotorky pro MAS NMR.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:MAS_rotors.jpg}{Thomas Kress/Commons}}}
+	\end{figure}
 	\vfill
 }
 
