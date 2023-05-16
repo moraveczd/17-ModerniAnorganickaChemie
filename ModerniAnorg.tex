@@ -473,7 +473,7 @@
 	\vfill
 	\begin{itemize}
 		\item Zajímavé vlastnosti mají i kombinace 2D materiálů, např. \ce{{MoS$_2$}/{grafit}} nebo \ce{{MoS$_2$}/h-BN}.\footnote[frame]{h-BN - hexagonální BN}
-		\item Tyto materiály mají velmi rozdílné mřížkové konstanty a díky tomu vykazují velmi nízký součinitel tření. \footnote[frame]{\href{https://fel.cvut.cz/cz/aktuality/2022/superlubrikant}{Tisíc tun jednou rukou. Časopis Nature Materials publikoval práci o „superlubrikantu“ objeveném na FEL ČVUT v Praze}}
+		\item Tyto materiály mají velmi rozdílné mřížkové konstanty a díky tomu vykazují velmi nízký součinitel tření.\footnote[frame]{\href{https://fel.cvut.cz/cz/aktuality/2022/superlubrikant}{Tisíc tun jednou rukou. Časopis Nature Materials publikoval práci o „superlubrikantu“ objeveném na FEL ČVUT v Praze}}
 		\item Měřením bylo zjištěno, že činitel tření má hodnotu nižší než $10^{-6}$, což je nejnižší známá hodnota.\footnote[frame]{\href{https://doi.org/10.1038/s41563-021-01058-4}{UItra-low friction and edge-pinning effect in large-lattice-mismatch van der Waals heterostructures}}
 		\item Tyto materiály by mohly být velmi dobře využitelné např. v robotice při realizaci lineárního posuvu.\footnote[frame]{\href{https://www.osel.cz/12159-2d-materialy-jsou-maziva-budoucnosti.html}{2D materiály jsou maziva budoucnosti}}
 	\end{itemize}
@@ -619,49 +619,6 @@
 	\vfill
 }
 
-\subsection{Reakce v pevné fázi}
-\frame{
-	\frametitle{}
-	\vfill
-	\begin{itemize}
-		\item Heterogenní reakce, jsou velmi pomalé, protože difuze je v pevném stavu obtížná.
-		\item Reakce probíhá na hranicích zrn reaktantů, proto je nutné vycházet z jemných prášků.
-		\item Zvýšení teploty způsobuje rychlejší reakci, běžně se využívají teploty okolo 1000~$^\circ$C.
-		\item Syntéza wolframanu: \ce{CaCO3 + WO3 ->[1200 $^\circ$C] CaWO4 + CO2}
-		\item Syntéza spinelu: \ce{MgO + Al2O3 ->[1300 $^\circ$C] MgAl2O4}
-	\end{itemize}
-	\begin{figure}
-		\adjincludegraphics[height=.28\textheight]{img/Horno_tubular.jpg}
-		\caption*{Laboratorní trubková pec.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Horno_tubular.jpg}{Manuel Almagro Rivas/Commons}}}
-	\end{figure}
-	\vfill
-}
-
-\frame{
-	\frametitle{}
-	\vfill
-	\begin{columns}
-	\begin{column}{0.65\textwidth}
-	\begin{itemize}
-		\item Výchozí látky jsou smíseny, homogenizovány a rozemlety na jemný prášek.
-		\item Vzniklá jemná směs je kalcinována ve vhodné atmosféře. Volba reakční atmosféry závisí na typu reakce.
-		\item Po kalcinaci se zpravidla provede kontrola pomocí PXRD.
-		\item Následuje zpracování produktu, např. lisování do tablet a další charakterizace.
-	\end{itemize}
-	\end{column}
-	\begin{column}{0.4\textwidth}
-		\begin{figure}
-			\adjincludegraphics[width=\textwidth]{img/MCM-48_Mesoporous_Silica_Nanoparticles.jpg}
-			\caption*{SEM snímek MCM-48.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:MCM-48_Mesoporous_Silica_Nanoparticles.jpg}{Monique Tso/Commons}}}
-		\end{figure}
-	\end{column}
-	\end{columns}
-	\begin{figure}
-		\adjincludegraphics[width=\textwidth]{img/SolidStateSynthesis.png}
-	\end{figure}
-	\vfill
-}
-
 \subsection{Sol--gelová syntéza}
 \subsubsection{Historie}
 \frame{
@@ -669,6 +626,7 @@
 	\vfill
 	\textbf{Sol--gelová syntéza}
 	\begin{itemize}
+		\item Homogenní syntéza, probíhá v roztoku, nejprve vzniká \textit{sol}, který postupně polymeruje za vzniku \textit{gelu}.
 		\item Počátky se datují do roku 1824, kdy byl poprvé připraven \ce{SiCl4}.\footnote[frame]{\href{https://link.springer.com/referenceworkentry/10.1007/978-3-319-19454-7_87-1}{History of the Sol–Gel Chemistry and Technology}}
 		\item V letech 1845--47 byla popsána gelace tetraethoxysilanu připraveného reakcí \ce{SiCl4} s ethanolem.
 		\item V letech 1931--1932 byly připraveny první aerogely.
@@ -815,6 +773,49 @@
 	\begin{figure}
 		\adjincludegraphics[height=.7\textheight]{img/Double_vac_line_side_view.jpg}
 		\caption*{Vakuová linka.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Double_vac_line_side_view.jpg}{Polimerek/Commons}}}
+	\end{figure}
+	\vfill
+}
+
+\subsection{Reakce v pevné fázi}
+\frame{
+	\frametitle{}
+	\vfill
+	\begin{itemize}
+		\item Heterogenní reakce, jsou velmi pomalé, protože difuze je v pevném stavu obtížná.
+		\item Reakce probíhá na hranicích zrn reaktantů, proto je nutné vycházet z jemných prášků.
+		\item Zvýšení teploty způsobuje rychlejší reakci, běžně se využívají teploty okolo 1000~$^\circ$C.
+		\item Syntéza wolframanu: \ce{CaCO3 + WO3 ->[1200 $^\circ$C] CaWO4 + CO2}
+		\item Syntéza spinelu: \ce{MgO + Al2O3 ->[1300 $^\circ$C] MgAl2O4}
+	\end{itemize}
+	\begin{figure}
+		\adjincludegraphics[height=.28\textheight]{img/Horno_tubular.jpg}
+		\caption*{Laboratorní trubková pec.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Horno_tubular.jpg}{Manuel Almagro Rivas/Commons}}}
+	\end{figure}
+	\vfill
+}
+
+\frame{
+	\frametitle{}
+	\vfill
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+			\begin{itemize}
+				\item Výchozí látky jsou smíseny, homogenizovány a rozemlety na jemný prášek.
+				\item Vzniklá jemná směs je kalcinována ve vhodné atmosféře. Volba reakční atmosféry závisí na typu reakce.
+				\item Po kalcinaci se zpravidla provede kontrola pomocí PXRD.
+				\item Následuje zpracování produktu, např. lisování do tablet a další charakterizace.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\adjincludegraphics[width=\textwidth]{img/MCM-48_Mesoporous_Silica_Nanoparticles.jpg}
+				\caption*{SEM snímek MCM-48.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:MCM-48_Mesoporous_Silica_Nanoparticles.jpg}{Monique Tso/Commons}}}
+			\end{figure}
+		\end{column}
+	\end{columns}
+	\begin{figure}
+		\adjincludegraphics[width=\textwidth]{img/SolidStateSynthesis.png}
 	\end{figure}
 	\vfill
 }
@@ -1102,12 +1103,12 @@
 				\item Principem metody je zplynění prekurzoru a jeho depozice na žhavený substrát.
 				\item Na substrátu a v jeho okolí dochází k (zpravidla) tepelnému rozkladu prekurzoru(ů).
 				\item Nejčastěji se setkáváme s pyrolytickými, redukčními, disproporcionačními a oxidačními procesy.
-				\begin{itemize}
-					\item \ce{CH_4 -> C + 2 H_2}
-					\item \ce{WF_6 + 3 H_2 -> W + 6 HF}
-					\item \ce{SiH_4 + O_2 -> SiO_2 + 2 H_2}
-				\end{itemize}
 			\end{itemize}
+			\begin{align*}
+				\ce{CH_4 &-> C + 2 H_2} \\
+				\ce{WF_6 + 3 H_2 &-> W + 6 HF} \\
+				\ce{SiH_4 + O_2 &-> SiO_2 + 2 H_2}
+			\end{align*}
 		\end{column}
 		\begin{column}{.4\textwidth}
 			\begin{figure}
@@ -1146,7 +1147,7 @@
 		\item Multinukleární NMR spektroskopie v pevném a kapalném stavu
 		\item \href{https://is.muni.cz/www/moravec/c5060_metody_chemickeho_vyzkumu/}{\underline{Infračervená a Ramanova spektroskopie}}
 		\item Povrchová analýza
-		\item \href{https://is.muni.cz/www/moravec/c5965_vybrane_analyticke_metody_v_chemii_konzervovani-restaurovani/}{\underline{Termická analýza}}
+		\item Termická analýza
 		\item Mikroskopie
 		\item Dynamický rozptyl světla -- DLS
 	\end{itemize}
@@ -1182,6 +1183,23 @@
 		\item Pokud na tento systém působíme radiofrekvenčním zářením, může dojít k absorpci energie a excitaci spinu na vyšší energetickou hladinu.
 		\item Poté pozorujeme návrat spinu a původní hladinu a emisi absorbované energie, kterou následně snímáme.
 	\end{itemize}
+	\vfill
+}
+
+\frame{
+	\frametitle{}
+	\vfill
+	\textbf{Běžná jádra využívaná v NMR}
+	\begin{tabular}{|l|r@{,}l|l||l|r@{,}l|l|}
+		\hline
+		\textbf{Jádro} & \multicolumn{2}{|c|}{\textbf{Zast. [\%]}} & \textbf{Spin} & \textbf{Jádro} & \multicolumn{2}{|c|}{\textbf{Zast. [\%]}} & \textbf{Spin} \\\hline
+		$^{1}$H & 99 & 985 & 1/2 & $^{29}$Si & 4 & 683 & 1/2 \\\hline
+		$^{2}$H & 0 & 0115 & 1 & $^{31}$P & 100 & 000 & 1/2 \\\hline
+		$^{11}$B & 80 & 1 & 3/2 & $^{51}$V & 99 & 750 & 6 \\\hline
+		$^{13}$C & 1 & 07 & 1/2 & $^{63}$Cu & 69 & 17 & 3/2 \\\hline
+		$^{19}$F & 100 & 000 & 1/2 & $^{77}$Se & 7 & 63 & 1/2 \\\hline
+		$^{27}$Al & 100 & 000 & 5/2 & $^{89}$Y & 100 & 000 & 1/2 \\\hline
+	\end{tabular}
 	\vfill
 }
 
@@ -1548,69 +1566,6 @@
 \frame{
 	\frametitle{}
 	\vfill
-	\begin{columns}
-		\begin{column}{.6\textwidth}
-			\begin{itemize}
-				\item Skupina metod pro stanovení měrného povrchu a porosity materiálů.
-				\item \textbf{Měrný povrch} - povrch materiálu vztažený na jednotku hmotnosti.
-				\item \textbf{Rtuťová intruzní porozimetrie} -- založena na vtlačování rtuti do pórů. Používá se pro stanovení pórů o velikostech od 4~nm do stovek mikrometrů.
-				\item \textbf{Plynová porozimetrie} -- sorpce plynu na povrch vzorku. Používá se pro stanovení pórů o velikostech od 0,33~nm do stovek nanometrů.
-			\end{itemize}
-		\end{column}
-		\begin{column}{.5\textwidth}
-			\begin{figure}
-				\adjincludegraphics[width=.9\textwidth]{img/ZIF-8.png}
-				\caption*{Struktura porézního zeolitu ZIF-8.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Structure_of_ZIF-8(H).png}{François-Xavier Coudert/Commons}}}
-			\end{figure}
-		\end{column}
-	\end{columns}
-	\vfill
-}
-
-\frame{
-	\frametitle{}
-	\vfill
-	Měrný povrch je důležitou charakteristikou katalyzátorů, sorpčních materiálů, apod.
-	\begin{columns}
-		\begin{column}{.5\textwidth}
-			\begin{tabular}{|l|l|}
-				\hline
-				\textbf{Materiál} & \textbf{SA [m$^2$.g$^{-1}$]} \\\hline
-				MOF & 7140 \\\hline
-				Grafen & 2700 \\\hline
-				Aktivní uhlí & 500--3000 \\\hline
-				MCM-41 (\ce{SiO2}) & 1000 \\\hline
-				Molekulová síta & až 1000 \\\hline
-				Faujesite & 900 \\\hline
-				Alumina & 200 \\\hline
-				\ce{CaCO3} & 3 \\\hline
-			\end{tabular}
-
-		\end{column}
-		\begin{column}{.5\textwidth}
-			\begin{center}
-				\begin{figure}
-					\adjincludegraphics[width=.8\textwidth]{img/Radial_mesoporous_silica.jpg}
-					\caption*{Mezoporézní silica.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:Radial_mesoporous_silica.jpg}{Xin Min et al/Commons}}}
-				\end{figure}
-
-				\textbf{Velikost pórů:}
-
-				\begin{tabular}{ll}
-					Mikropóry & $<$2 nm \\
-					Mezopóry & 2--50 nm \\
-					Makropóry & $>$50 nm \\
-				\end{tabular}
-			\end{center}
-		\end{column}
-	\end{columns}
-	\vfill
-}
-
-\subsection{BET teorie}
-\frame{
-	\frametitle{}
-	\vfill
 	\begin{itemize}
 		\item Brunauer–Emmett–Teller (BET) -- velmi používaný způsob výpočtu měrného povrchu.
 		\item Využívá začátek adsorpční izotermy (P/P$_0$ 0-0,3), kdy lze předpokládat vznik monovrstvy.
@@ -1953,7 +1908,7 @@
 	\frametitle{}
 	\vfill
 	\begin{figure}
-		\adjincludegraphics[height=.75\textheight]{img/AFM_-_detail.jpg}
+		\adjincludegraphics[height=.67\textheight]{img/AFM_-_detail.jpg}
 		\caption*{AFM mikroskop.\footnote[frame]{Zdroj: \href{https://commons.wikimedia.org/wiki/File:AFM_-_detail.jpg}{Laundry/Commons}}}
 	\end{figure}
 	\vfill
